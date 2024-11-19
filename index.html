@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <main>
+    <header id="header">
+      <div class="overlay overlay-lg">
+        <img src="./images/shapes/square.png" class="shape square" alt="" />
+        <img src="./images/shapes/circle.png" class="shape circle" alt="" />
+        <img src="./images/shapes/half-circle.png" class="shape half-circle1" alt="" />
+        <img src="./images/shapes/half-circle.png" class="shape half-circle2" alt="" />
+        <img src="./images/shapes/x.png" class="shape xshape" alt="" />
+        <img src="./images/shapes/wave.png" class="shape wave wave1" alt="" />
+        <img src="./images/shapes/wave.png" class="shape wave wave2" alt="" />
+        <img src="./images/shapes/triangle.png" class="shape triangle" alt="" />
+        <img src="./images/shapes/letters.png" class="letters" alt="" />
+        <img src="./images/shapes/points1.png" class="points points1" alt="" />
+      </div>
+
+      <nav>
+        <div class="container">
+          <!-- <div class="logo">
+              <img src="./img/logo.png" alt="" />
+            </div>
+
+            <div class="links">
+              <ul>
+                <li>
+                  <a href="#header">Home</a>
+                </li>
+                <li>
+                  <a href="#services">Services</a>
+                </li>
+                <li>
+                  <a href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#testimonials">Testimonials</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+                <li>
+                  <a href="#hireme" class="active">Hire me</a>
+                </li>
+              </ul> -->
+          <div class="news-container">
+            <ul>
+              <li>
+                Website này chỉ cung cấp thông tin tham khảo. Để đảm bảo chuẩn đoán và điều trị chính xác, quý khách vui lòng đến bệnh viện để được thăm khám chi tiết
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+        </div>
+      </nav>
+
+      <div class="header-content">
+        <div class="container grid-2">
+          <div class="column-1">
+            <h1 class="header-title">ĐÀN ÔNG THỜI ĐẠI,</h1>
+
+            <h1 class="header-title">KHÔNG SỢ CHĂM DA</h1>
+            <!-- <p class="text">
+                Hello, I'm Miley Brewer, web design and developer. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Totam magni sit
+                hic!
+              </p> -->
+            <a href="da.html" class="btn">Tìm hiểu ngay</a>
+          </div>
+
+          <div class="column-2 image">
+            <img src="./images/shapes/points2.png" class="points points2" alt="" />
+            <img src="./images/person.png" class="img-element z-index" alt="" />
+          </div>
+          <section id="section07" class="demo">
+            <a href="#services"><span></span><span></span><span></span></a>
+          </section>
+        </div>
+      </div>
+    </header>
+
+    <!-- Phần sẽ chuyển đến -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="title" data-title="Bạn nên làm gì?">Làm theo tuần tự các bước</h3>
+        </div>
+
+        <div class="cards">
+          <div class="card-wrap">
+            <img src="./images/shapes/points3.png" class="points points1 points-sq" alt="" />
+            <div class="card" data-card="UI/UX">
+              <div class="card-content z-index">
+                <img src="./images/design-icon.png" class="icon" alt="" />
+                <h3 class="title-sm">Bước 1</h3>
+                <p class="text">
+                  Cần xác định rằng loại da của mỗi người là khác nhau và phụ thuộc vào sự tổng hợp của nhiều yếu tố.
+                </p>
+                <a href="da.html" class="btn small">XEM NGAY</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-wrap">
+            <div class="card" data-card="Code">
+              <div class="card-content z-index">
+                <img src="./images/code-icon.png" class="icon" alt="" />
+                <h3 class="title-sm">Bước 2</h3>
+                <p class="text">
+                  Xác định nền da giúp chọn sản phẩm và phương pháp chăm sóc phù hợp, từ đó cải thiện hiệu quả và tránh
+                  kích ứng cho da.
+                </p>
+                <a href="nenDa.html" class="btn small" id="step2Btn" onclick="handleStep2Click(event)">XEM NGAY</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-wrap">
+            <img src="./images/shapes/points3.png" class="points points2 points-sq" alt="" />
+            <div class="card" data-card="App">
+              <div class="card-content z-index">
+                <img src="./images/app-icon.png" class="icon" alt="" />
+                <h3 class="title-sm">Bước 3</h3>
+                <p class="text">
+                  Nam giới nên chăm sóc da và duy trì lối sống lành mạnh để ngăn ngừa lão hóa, kết hợp với việc sử dụng
+                  sản phẩm chống lão hóa phù hợp.
+                </p>
+                <a href="search.html" class="btn small" id="step3Btn" onclick="handleStep3Click(event)">XEM NGAY</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          // Biến lưu trạng thái của các bước
+          let step1Completed = false;
+          let step2Completed = false;
+
+          // Hàm xử lý khi nhấn vào "XEM NGAY" của bước 1
+          function handleStep1Click(event) {
+            // Ngừng hành động mặc định của liên kết (nếu cần thiết)
+            event.preventDefault();
+
+            // Đánh dấu bước 1 là hoàn thành
+            step1Completed = true;
+
+            // Thông báo cho người dùng rằng họ đã hoàn thành bước 1
+            alert("Bước 1 đã hoàn thành! Bạn có thể tiếp tục Bước 2.");
+
+            // Chuyển hướng đến trang của bước 1 (nếu cần)
+            window.location.href = event.target.href;
+          }
+
+          // Hàm xử lý khi nhấn vào "XEM NGAY" của bước 2
+          function handleStep2Click(event) {
+            // Kiểm tra nếu bước 1 đã được hoàn thành
+            if (!step1Completed) {
+              // Nếu bước 1 chưa hoàn thành, cảnh báo người dùng và không cho phép tiếp tục
+              event.preventDefault(); // Ngừng hành động mặc định
+              alert("Vui lòng quay lại bước 1 để được hướng dấn");
+            } else {
+              // Nếu bước 1 đã hoàn thành, đánh dấu bước 2 là hoàn thành
+              step2Completed = true;
+              alert("Vui lòng quay lại bước 1 để được hướng dấn");
+            }
+          }
+
+          // Hàm xử lý khi nhấn vào "XEM NGAY" của bước 3
+          function handleStep3Click(event) {
+            // Kiểm tra nếu bước 1 và bước 2 đều đã hoàn thành
+            if (!step1Completed || !step2Completed) {
+              // Nếu bước 1 hoặc bước 2 chưa hoàn thành, cảnh báo người dùng và không cho phép tiếp tục
+              event.preventDefault(); // Ngừng hành động mặc định
+              alert("Vui lòng quay lại bước 1 để được hướng dấn");
+            } else {
+              // Nếu cả bước 1 và bước 2 đã hoàn thành, hiển thị thông báo
+              alert("Vui lòng quay lại bước 1 để được hướng dấn");
+            }
+          }
+        </script>
+      </div>
+      </div>
+    </section>
+
+    <section class="portfolio section" id="portfolio">
+      <div class="background-bg">
+        <div class="overlay overlay-sm">
+          <img src="./images/shapes/half-circle.png" class="shape half-circle1" alt="" />
+          <img src="./images/shapes/half-circle.png" class="shape half-circle2" alt="" />
+          <img src="./images/shapes/square.png" class="shape square" alt="" />
+          <img src="./images/shapes/wave.png" class="shape wave" alt="" />
+          <img src="./images/shapes/circle.png" class="shape circle" alt="" />
+          <img src="./images/shapes/triangle.png" class="shape triangle" alt="" />
+          <img src="./images/shapes/x.png" class="shape xshape" alt="" />
+        </div>
+      </div>
+
+      <!-- <div class="container">
+        <div class="section-header">
+          <h3 class="title" data-title="My works">Portfolio</h3>
+        </div>
+
+        <div class="section-body">
+          <div class="filter">
+            <button class="filter-btn active" data-filter="*">All</button>
+            <button class="filter-btn" data-filter=".ui">UI/UX</button>
+            <button class="filter-btn" data-filter=".webdev">Web Dev</button>
+            <button class="filter-btn" data-filter=".appdev">
+              Mobile App
+            </button>
+            <button class="filter-btn" data-filter=".logo-design">
+              Logo Design
+            </button>
+          </div>
+
+          <div class="grid">
+            <div class="grid-item logo-design">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port1.jpg" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>Logo Design</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item webdev">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port2.png" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>Web Development</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item ui webdev">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port3.png" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>Web Design</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item ui">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port4.png" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>UI / UX Design</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item logo-design">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port5.jpg" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>Logo Design</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item appdev">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port6.jpg" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>App Development</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item logo-design">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port7.jpg" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>Logo Design</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item appdev ui">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port8.png" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>App Development</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item ui webdev">
+              <div class="gallery-image">
+                <img src="./images/portfolio/port9.png" alt="" />
+                <div class="img-overlay">
+                  <div class="plus"></div>
+                  <div class="img-description">
+                    <h3>Web Design</h3>
+                    <h5>View Demo</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="more-folio">
+            <a href="#" class="btn">More Folio</a>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="title" data-title="Who Am I">About me</h3>
+        </div>
+
+        <div class="section-body grid-2">
+          <div class="column-1">
+            <h3 class="title-sm">Hello, I'm</h3>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Praesentium distinctio doloribus quam? Ut, laudantium a dolore,
+              minima repudiandae iure iste molestiae exercitationem earum
+              neque tempora?
+            </p>
+            <div class="skills">
+              <div class="skill html">
+                <h3 class="skill-title">HTML</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90%"></div>
+                </div>
+              </div>
+              <div class="skill css">
+                <h3 class="skill-title">CSS</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="70%"></div>
+                </div>
+              </div>
+              <div class="skill js">
+                <h3 class="skill-title">JavaScript</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80%"></div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn">Read more</a>
+          </div>
+
+          <div class="column-2 image">
+            <img src="./images/shapes/points4.png" class="points" alt="" />
+            <img src="./images/about.png" class="z-index" alt="" />
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- <section class="records">
+      <div class="overlay overlay-sm">
+        <img src="./images/shapes/square.png" alt="" class="shape square1" />
+        <img src="./images/shapes/square.png" alt="" class="shape square2" />
+        <img src="./images/shapes/circle.png" alt="" class="shape circle" />
+        <img src="./images/shapes/half-circle.png" alt="" class="shape half-circle" />
+        <img src="./images/shapes/wave.png" alt="" class="shape wave wave1" />
+        <img src="./images/shapes/wave.png" alt="" class="shape wave wave2" />
+        <img src="./images/shapes/x.png" alt="" class="shape xshape" />
+        <img src="./images/shapes/triangle.png" alt="" class="shape triangle" />
+      </div>
+
+      <div class="container">
+        <div class="wrap">
+          <div class="record-circle">
+            <h2 class="number" data-num="235">0</h2>
+            <h4 class="sub-title">Projects</h4>
+          </div>
+        </div>
+
+        <div class="wrap">
+          <div class="record-circle active">
+            <h2 class="number" data-num="174">0</h2>
+            <h4 class="sub-title">Happy Clients</h4>
+          </div>
+        </div>
+
+        <div class="wrap">
+          <div class="record-circle">
+            <h2 class="number" data-num="892">0</h2>
+            <h4 class="sub-title">Work Hour</h4>
+          </div>
+        </div>
+
+        <div class="wrap">
+          <div class="record-circle">
+            <h2 class="number" data-num="368">0</h2>
+            <h4 class="sub-title">Awards</h4>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="blog section">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="title" data-title="Sưu tầm">Chia sẻ</h3>
+        </div>
+
+        <div class="blog-wrapper">
+          <div class="blog-wrap">
+            <img src="./images/shapes/points3.png" alt="" class="points points-sq" />
+
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="./images/blog1.png" alt="" />
+              </div>
+
+              <div class="blog-content">
+                <div class="blog-info">
+                  <h5 class="blog-date">Ngày 9 tháng 6 năm 2022</h5>
+                  <h5 class="blog-user"><i class="fas fa-user"></i>
+                    KIENPHAM
+                  </h5>
+                </div>
+                <h3 class="title-sm">Các bước SKINCARE CƠ BẢN cho nam giới</h3>
+
+                <a href="https://www.youtube.com/watch?v=d4BIKWu52XA" class="btn small">Xem ngay</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-wrap">
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="./images/blog2.png" alt="" />
+              </div>
+
+              <div class="blog-content">
+                <div class="blog-info">
+                  <h5 class="blog-date">Ngày 12 tháng 1 năm 2024</h5>
+                  <h5 class="blog-user"><i class="fas fa-user"></i>
+                    Lương Đỗ</h5>
+                </div>
+                <h3 class="title-sm">Skincare 3 bước đơn giản cho nam
+                </h3>
+                <a href="https://www.youtube.com/watch?v=qF_WbXVyhNw" class="btn small">Xem ngay</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-wrap">
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="./images/blog3.png" alt="" />
+              </div>
+
+              <div class="blog-content">
+                <div class="blog-info">
+                  <h5 class="blog-date">Ngày 17 tháng 7 năm 2020</h5>
+                  <h5 class="blog-user"><i class="fas fa-user"></i>Bí Quyết Đẹp Trai</h5>
+                </div>
+                <h3 class="title-sm">7 Ngày Trị Mụn Tận Gốc Đơn Giản Tại Nhà</h3>
+                <a href="https://www.youtube.com/watch?v=q9cJF_qHNI8" class="btn small">Xem ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <section class="hireme" id="hireme">
+        <div class="container">
+          <h3 class="title">Châm ngôn chúng tôi</h3>
+          <p class="text">
+            "Chăm sóc da đúng cách, giúp nam giới tự tin với vẻ ngoài khỏe mạnh. Làn da sáng mịn, đầy sức sống bắt đầu
+            từ
+            những bước chăm sóc đơn giản mỗi ngày. Với sản phẩm chuyên biệt, bảo vệ và ngăn ngừa lão hóa, bạn sẽ luôn
+            sẵn
+            sàng đối mặt với mọi thử thách. Đầu tư cho làn da hôm nay, để tự tin tỏa sáng trong tương lai."
+          </p>
+        </div>
+      </section>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

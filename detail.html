@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>ManCare</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/da.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <script>
+        // Hàm hiển thị thông báo khi trang được tải
+        window.onload = function () {
+          alert("Sau khi xác định xong bạn có thể ấn 'Bước tiếp theo' trên góc phải màn hình để qua bước tiếp theo.");
+        };
+      </script>
+</head>
+<body>
+
+<main>
+  
+
+    <div class="main-content">
+        <nav class="navbar">
+            <ul class="navbar-list">
+  
+              <li class="navbar-item">
+                  <a href="index.html" class="previous">&laquo; Trang chủ</a>
+                </li>
+  
+                <li class="navbar-item">
+                    <a href="nenDa.html" class="next">Quay lại</a>
+                  </li>  
+
+                <li class="navbar-item">
+                  <a href="search.html" class="next">Bước tiếp theo &raquo;</a>
+                </li>          
+            </ul>
+          </nav>
+
+        <article class="about active" data-page="nền da">
+            <div class="container">
+                <div class="detail">
+                    <div class="image">
+                        <img src="">
+                    </div>
+                    <div class="content">
+                        <h1 class="name"></h1>
+                        <div class="price"></div>
+                        <div class="buttons"></div>
+                        <div class="description"></div>
+                    </div>
+                </div>
+                <section class="product-all-info">
+                    <ul class="product-info-menu">
+                        <li class="p-info-list active" onclick="setActive(this)">Nguyên nhân</li>
+                        <li class="p-info-list" onclick="setActive(this)">Triệu chứng</li>
+                        <li class="p-info-list" onclick="setActive(this)">Cách chăm sóc</li>
+                        <li class="p-info-list" onclick="setActive(this)">Gợi ý sản phẩm</li>
+                    </ul>
+                    <div class="info-container">
+                        <p></p>
+                    </div>
+                </section>
+
+                <div class="title">Tình trạng khác</div>
+                <div class="listProduct"></div>
+            </div>
+        </article>
+    </div>
+</main>
+
+<script>
+    function goHome() {
+        window.location.href = '/'; // Đường dẫn đến trang chính
+    }
+
+    function setActive(element) {
+        var items = document.querySelectorAll('.product-info-menu .p-info-list');
+        items.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        element.classList.add('active');
+    }
+    
+    let products = null;
+    fetch('products.json')
+        .then(response => response.json())
+        .then(data => {
+            products = data;
+            showDetail();
+        });
+
+    function showDetail() {
+        let detail = document.querySelector('.detail');
+        let listProduct = document.querySelector('.listProduct');
+        let productId = new URLSearchParams(window.location.search).get('id');
+        let thisProduct = products.filter(value => value.id == productId)[0];
+
+        if (!thisProduct) {
+            window.location.href = "/";
+        }
+
+        detail.querySelector('.image img').src = thisProduct.image;
+        detail.querySelector('.name').innerText = thisProduct.name;
+
+        let infoContainer = document.querySelector('.info-container');
+        let infoMenu = document.querySelector('.product-info-menu');
+
+        function displayInfo(type) {
+            switch (type) {
+                case "Nguyên nhân":
+                    infoContainer.innerHTML = `<p>${thisProduct.nguyen_nhan}</p>`;
+                    break;
+                case "Triệu chứng":
+                    infoContainer.innerHTML = `<p>${thisProduct.trieu_chung}</p>`;
+                    break;
+                case "Cách chăm sóc":
+                    infoContainer.innerHTML = `<p>${thisProduct.cach_cham_soc}</p>`;
+                    break;
+                case "Gợi ý sản phẩm":
+                    let suggestionsHTML = `<p>${thisProduct.goi_y_san_pham}</p>`;
+                    if (thisProduct.suggested_products && thisProduct.suggested_products.length > 0) {
+                        suggestionsHTML += `<div class="suggested-products">`;
+                        thisProduct.suggested_products.forEach(suggested => {
+                            suggestionsHTML += `
+                                <a href="${suggested.link}" class="suggested-item" target="_blank">
+                                    <img src="${suggested.image}" alt="${suggested.name}">
+                                    <span>${suggested.name}</span>
+                                </a>`;
+                        });
+                        suggestionsHTML += `</div>`;
+                    }
+                    infoContainer.innerHTML = suggestionsHTML;
+                    break;
+            }
+        }
+
+        infoMenu.querySelectorAll('.p-info-list').forEach(function(item) {
+            item.onclick = function() {
+                setActive(item);
+                displayInfo(item.innerText);
+            };
+        });
+
+        displayInfo("Nguyên nhân");
+
+        products.forEach(product => {
+            if (product.id != productId) {
+                let newProduct = document.createElement('a');
+                newProduct.href = '/detail.html?id=' + product.id;
+                newProduct.classList.add('item');
+                newProduct.innerHTML = 
+                `<img src="${product.image}" alt="">
+                <h2>${product.name}</h2>
+                <div class="price"></div>`;
+                listProduct.appendChild(newProduct);
+            }
+        });
+    }
+</script>
+</body>
+</html>

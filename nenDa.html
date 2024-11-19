@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./css/da.css"/>
+    <script>
+      // Hàm hiển thị thông báo khi trang được tải
+      window.onload = function () {
+        alert("Bạn chọn hình ảnh minh họa có tình trạng da giống bạn để tìm hiểu sâu hơn.");
+      };
+    </script>
+    <title>ManCare</title>
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+  -->
+  <script src="./js/script.js"></script>
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    /> -->
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+     
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+              <a href="index.html" class="previous">&laquo; Trang chủ</a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="da.html" class="next">Quay lại</a>
+              </li>  
+
+            <li class="navbar-item">
+              <a href="search.html" class="next">Bước tiếp theo &raquo;</a>
+            </li>          
+        </ul>
+      </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="trang chủ">
+            <header>
+              <h2 class="h2 article-title">Vấn đề da</h2>
+            </header>
+  
+            <section class="projects">
+                <button class="filter-select" data-select>
+                  <div class="container">
+                    <div class="listProduct">
+            
+                    </div>
+                </div>
+            
+                
+            
+                <script>
+                    let products = null;
+                    fetch('products.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            products = data;
+                            addDataToHTML();
+                    })
+            
+                    function addDataToHTML(){
+                // remove datas default from HTML
+                    let listProductHTML = document.querySelector('.listProduct');
+            
+                    // add new datas
+                    if(products != null) // if has data
+                    {
+                        products.forEach(product => {
+                            let newProduct = document.createElement('a');
+                            newProduct.href = '/detail.html?id=' + product.id;
+                            newProduct.classList.add('item');
+                            newProduct.innerHTML = 
+                            `<img src="${product.image}" alt="">
+                            <h2>${product.name}</h2>
+                            <div class="price"></div>`;
+                            listProductHTML.appendChild(newProduct);
+            
+                        });
+                    }
+                }        
+                </script>
+            </section>
+          </article>
+        
+</body>
+</html>
